@@ -16,7 +16,7 @@ export default function App() {
                <div className="brand-icon">
                   <BookOpenCheck />
                </div>
-               <h1>German Learning Companion</h1>
+               <h1>Learning Companion</h1>
             </div>
             <div className="header-actions">
                <button>
@@ -32,11 +32,11 @@ export default function App() {
          </header>
          <main>
             <section className="search-section">
-               <h2>Search any German word</h2>
+               <h2>Explore and learn something new</h2>
                <form className="search-form">
                   <input
                      type="search"
-                     placeholder="Search a word (e.g. Haus, Wasser, lernen...)"
+                     placeholder="Search a word (e.g. book, water, learn...)"
                   />
                   <button type="submit">
                      <Search />
@@ -47,8 +47,8 @@ export default function App() {
                      <Lightbulb />
                   </span>
                   <span>
-                     Tip: Try searching for nouns to see gender and plural
-                     forms!
+                     Tip: Search a word to learn its meaning and how to use it
+                     in context.
                   </span>
                </div>
             </section>

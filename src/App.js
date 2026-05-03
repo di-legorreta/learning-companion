@@ -1,12 +1,6 @@
 import "./App.css";
-import {
-   BookOpenCheck,
-   Moon,
-   Globe,
-   Heart,
-   Search,
-   Lightbulb,
-} from "lucide-react";
+import { BookOpenCheck, Moon, Globe, Heart, Lightbulb } from "lucide-react";
+import Dictionary from "./Dictionary";
 
 export default function App() {
    return (
@@ -33,15 +27,7 @@ export default function App() {
          <main>
             <section className="search-section">
                <h2>Explore and learn something new</h2>
-               <form className="search-form">
-                  <input
-                     type="search"
-                     placeholder="Search a word (e.g. book, water, learn...)"
-                  />
-                  <button type="submit">
-                     <Search />
-                  </button>
-               </form>
+               <Dictionary />
                <div className="tip">
                   <span className="tip-icon">
                      <Lightbulb />

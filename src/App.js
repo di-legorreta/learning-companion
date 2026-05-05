@@ -1,5 +1,5 @@
 import "./App.css";
-import { BookOpenCheck, Moon, Globe, Heart, Lightbulb } from "lucide-react";
+import { BookOpenCheck, Moon, Globe, Heart } from "lucide-react";
 import Dictionary from "./Dictionary";
 
 export default function App() {
@@ -28,15 +28,6 @@ export default function App() {
             <section className="search-section">
                <h2>Explore and learn something new</h2>
                <Dictionary />
-               <div className="tip">
-                  <span className="tip-icon">
-                     <Lightbulb />
-                  </span>
-                  <span>
-                     Tip: Search a word to learn its meaning and how to use it
-                     in context.
-                  </span>
-               </div>
             </section>
          </main>
       </div>

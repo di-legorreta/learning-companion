@@ -147,13 +147,60 @@ body {
 }
 
 .learning-card {
-   background: white;
-   padding: 24px;
-   border-radius: 16px;
+   position: relative;
+   overflow: hidden;
+   padding: 28px;
+   border-radius: 18px;
    min-height: 180px;
-   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+.learning-card * {
+   position: relative;
+   z-index: 1;
 }
 
+.card-primary::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-image: url("/public/lila-blob.svg");
+   background-size: conver;
+   background-repeat: no-repeat;
+   opacity: 0.5;
+   z-index: 0;
+}
+
+.card-secondary::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-image: url("/public/green-blob.svg");
+   background-size: conver;
+   background-repeat: no-repeat;
+   opacity: 0.5;
+   z-index: 0;
+}
+
+.card-tertiary::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-image: url("/public/orange-blob.svg");
+   background-size: conver;
+   background-repeat: no-repeat;
+   opacity: 0.5;
+   z-index: 0;
+}
+.card-quaternary::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-image: url("/public/blue-blob.svg");
+   background-size: conver;
+   background-repeat: no-repeat;
+   opacity: 0.5;
+   z-index: 0;
+}
 .meaning-item {
    margin-bottom: 18px;
    padding-bottom: 14px;

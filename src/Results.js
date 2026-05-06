@@ -1,10 +1,17 @@
 import React from "react";
 import Meaning from "./Meaning";
+import Synonyms from "./Synonyms";
 
 export default function Results(props) {
-   console.log(props.results);
-
    if (props.results && props.results.meanings) {
+      let allSynonyms = props.results.meanings
+         .map(function (meaning) {
+            return meaning.synonyms;
+         })
+         .flat()
+         .filter(function (synonym) {
+            return synonym;
+         });
       return (
          <section className="cards-grid">
             <article className="learning-card card-primary">
@@ -24,7 +31,9 @@ export default function Results(props) {
                      );
                   })}
             </article>
-            <article className="learning-card card-tertiary">Card 3</article>
+            <article className="learning-card card-tertiary">
+               <Synonyms synonyms={allSynonyms} />
+            </article>
             <article className="learning-card card-quaternary">Card 4</article>
          </section>
       );

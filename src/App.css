@@ -174,7 +174,7 @@ body {
    content: "";
    position: absolute;
    inset: 0;
-   background-image: url("/public/green-blob.svg");
+   background-image: url("/public/green2-blob.svg");
    background-size: conver;
    background-repeat: no-repeat;
    opacity: 0.5;
@@ -211,4 +211,22 @@ body {
    margin-bottom: 0;
    padding-bottom: 0;
    border-bottom: none;
+}
+
+.synonyms {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   justify-content: center;
+}
+
+.synonym {
+   display: inline-block;
+   padding: 8px 12px;
+   border-radius: 999px;
+   background: rgba(255, 170, 120, 0.18);
+   color: #fc944e;
+   font-size: 16px;
+   font-weight: 600;
+   line-height: 1;
 }

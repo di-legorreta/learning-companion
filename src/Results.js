@@ -1,6 +1,7 @@
 import React from "react";
 import Meaning from "./Meaning";
 import Synonyms from "./Synonyms";
+import Phonetics from "./Phonetics";
 
 export default function Results(props) {
    if (props.results && props.results.meanings) {
@@ -18,6 +19,7 @@ export default function Results(props) {
                <div className="word-entry">
                   <h3 className="word-title">{props.results.word}</h3>
                   <p className="phonetic">{props.results.phonetic}</p>
+                  <Phonetics word={props.results.word} />
                </div>
             </article>
             <article className="learning-card card-secondary">

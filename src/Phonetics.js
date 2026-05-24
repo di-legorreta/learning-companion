@@ -16,7 +16,7 @@ export default function Phonetics(props) {
 
    return (
       <div className="phonetics-audio">
-         {phonetics.slice(0, 3).map(function (entry, index) {
+         {phonetics.slice(0, 2).map(function (entry, index) {
             return (
                <div className="phonetics-entry" key={index}>
                   {entry.phonetics.map(function (phonetic, index) {

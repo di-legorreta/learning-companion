@@ -16,18 +16,26 @@ export default function Phonetics(props) {
 
    return (
       <div className="phonetics-audio">
-         {phonetics.slice(0, 2).map(function (entry, index) {
+         {phonetics.slice(0, 1).map(function (entry, index) {
             return (
                <div className="phonetics-entry" key={index}>
-                  {entry.phonetics.map(function (phonetic, index) {
-                     return (
-                        <div className="phonetic-audio-item" key={index}>
-                           <span>{phonetic.text}</span>
+                  {entry.phonetics
 
-                           <audio controls src={phonetic.audio}></audio>
-                        </div>
-                     );
-                  })}
+                     .filter(function (phonetic) {
+                        return phonetic.audio;
+                     })
+
+                     .slice(0, 2)
+
+                     .map(function (phonetic, index) {
+                        return (
+                           <div className="phonetic-audio-item" key={index}>
+                              <span>{phonetic.text}</span>
+
+                              <audio controls src={phonetic.audio}></audio>
+                           </div>
+                        );
+                     })}
                </div>
             );
          })}

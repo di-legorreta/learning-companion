@@ -1,6 +1,7 @@
 import "./App.css";
-import { BookOpenCheck, Moon, Globe, Heart } from "lucide-react";
+import { BookOpenCheck, Globe, Heart } from "lucide-react";
 import Dictionary from "./Dictionary";
+import ThemeToggle from "./ThemeToggle";
 
 export default function App() {
    return (
@@ -13,9 +14,7 @@ export default function App() {
                <h1>Learning Companion</h1>
             </div>
             <div className="header-actions">
-               <button>
-                  <Moon />
-               </button>
+               <ThemeToggle />
                <button>
                   <Globe /> DE
                </button>

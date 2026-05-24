@@ -1,3 +1,20 @@
+:root {
+   --page-bg: linear-gradient(135deg, #ddd6f8 0%, #e8dff7 50%, #f0e7fb 100%);
+   --app-bg: linear-gradient(to bottom, #ffffff 0%, #f9f8fd 100%);
+   --header-bg: rgba(255, 255, 255, 0.95);
+   --text-main: #1a1a2e;
+   --text-muted: #5b5f7a;
+   --text-soft: #6f7385;
+   --card-bg: #ffffff;
+   --border-soft: rgba(124, 122, 255, 0.12);
+   --shadow-soft: 0 4px 16px rgba(124, 122, 255, 0.15);
+   --primary: #7c7aff;
+   --primary-dark: #6c5ce7;
+   --green: #16a34a;
+   --orange: #ea580c;
+   --blue: #2563eb;
+}
+
 body {
    margin: 0;
    background: linear-gradient(135deg, #ddd6f8 0%, #e8dff7 50%, #f0e7fb 100%);

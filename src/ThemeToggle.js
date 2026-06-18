@@ -6,6 +6,7 @@ export default function ThemeToggle() {
 
    function toggleTheme() {
       setDarkMode(!darkMode);
+      document.body.classList.toggle("dark");
    }
    return (
       <button onClick={toggleTheme}>

@@ -29,6 +29,144 @@ body {
    -moz-osx-font-smoothing: grayscale;
 }
 
+body.dark {
+   /* Moonlit Library — warm charcoal, parchment undertone, single lavender accent */
+   --page-bg: #18181f;
+   --app-bg: linear-gradient(to bottom, #1e1e27 0%, #1c1c25 100%);
+   --header-bg: rgba(28, 28, 38, 0.97);
+   --text-main: #e2ddf2;
+   --text-muted: #9b95b5;
+   --text-soft: #5e5878;
+   --card-bg: #232330;
+   --border-soft: rgba(255, 255, 255, 0.06);
+   --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.35);
+   --primary: #a89dd6;
+   --primary-dark: #c4baf0;
+   --green: #85b898;
+   --orange: #c49468;
+   --blue: #7aabd6;
+}
+
+/* Unified card system — all cards share the same surface, no color floods */
+body.dark .card-primary,
+body.dark .card-secondary,
+body.dark .card-tertiary,
+body.dark .card-quaternary {
+   background: var(--card-bg);
+   border-color: rgba(255, 255, 255, 0.07);
+   box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.25),
+      0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+/* Kill all blob overlays — they read as noise on a unified dark surface */
+body.dark .card-primary::before,
+body.dark .card-secondary::before,
+body.dark .card-tertiary::before,
+body.dark .card-quaternary::before {
+   opacity: 0;
+}
+
+/* Subtle top-edge accent line per card — identity through a thread, not a flood */
+body.dark .card-primary {
+   border-top: 2px solid rgba(168, 157, 214, 0.35);
+}
+
+body.dark .card-secondary {
+   border-top: 2px solid rgba(133, 184, 152, 0.35);
+}
+
+body.dark .card-tertiary {
+   border-top: 2px solid rgba(196, 148, 104, 0.35);
+}
+
+body.dark .card-quaternary {
+   border-top: 2px solid rgba(122, 171, 214, 0.35);
+}
+
+body.dark .learning-card:hover {
+   background: #272736;
+   box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.09);
+   transform: translateY(-2px);
+}
+
+/* Labels stay colored — category identity lives here, not in the card background */
+body.dark .part-of-speech {
+   color: var(--green);
+}
+
+body.dark .synonyms-title {
+   color: var(--orange);
+}
+
+body.dark .phonetic {
+   color: var(--primary-dark);
+}
+
+body.dark .meaning-item {
+   border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark .example {
+   color: #817c9a;
+   border-left-color: rgba(133, 184, 152, 0.28);
+}
+
+/* Synonym chips — warm amber, pill-shaped accent on a unified surface */
+body.dark .synonym {
+   background: rgba(196, 148, 104, 0.1);
+   color: #c49468;
+   border-color: rgba(196, 148, 104, 0.22);
+}
+
+body.dark .synonym:hover {
+   background: rgba(196, 148, 104, 0.17);
+   border-color: rgba(196, 148, 104, 0.32);
+   box-shadow: 0 2px 8px rgba(196, 148, 104, 0.1);
+   transform: translateY(-1px);
+}
+
+body.dark .search-form {
+   background: #1a1a23;
+   box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.06),
+      0 0 24px rgba(168, 160, 255, 0.08);
+}
+
+body.dark .search-form:focus-within {
+   box-shadow:
+      0 10px 28px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(168, 160, 255, 0.2),
+      0 0 30px rgba(168, 160, 255, 0.18);
+}
+
+body.dark .header-actions button {
+   background: transparent;
+   border-color: rgba(255, 255, 255, 0.08);
+   color: var(--text-muted);
+}
+
+body.dark .header-actions button:hover {
+   background: rgba(168, 157, 214, 0.08);
+   border-color: rgba(168, 157, 214, 0.2);
+   color: var(--primary-dark);
+}
+
+body.dark .phonetic-audio-item audio {
+   filter: saturate(0.4) brightness(0.7) contrast(0.9);
+}
+
+body.dark .tip-icon {
+   opacity: 0.55;
+}
+
+body.dark .word-title {
+   color: #ede8ff;
+}
+
 .app {
    min-height: 100vh;
    margin: 8px;
@@ -389,47 +527,52 @@ body {
 .word-entry {
    display: flex;
    flex-direction: column;
-   gap: 6px;
+   align-items: center;
+   gap: 8px;
+   text-align: center;
 }
 
 .word-title {
    margin: 0;
-   font-size: 24px;
-   font-weight: 600;
-   letter-spacing: -0.4px;
+   font-size: clamp(32px, 4vw, 48px);
+   font-weight: 800;
+   letter-spacing: -1px;
+   line-height: 1;
    color: var(--text-main);
 }
 
 .phonetic {
    margin: 0;
-   font-size: 14px;
+   font-size: 16px;
    color: var(--primary-dark);
-   font-weight: 500;
+   font-weight: 600;
    font-style: italic;
 }
 
 .phonetics-audio {
-   margin-top: 12px;
+   margin-top: 24px;
 }
 
 .phonetics-entry {
    display: flex;
    flex-direction: column;
-   gap: 8px;
+   gap: 12px;
 }
 
 .phonetic-audio-item {
    display: flex;
    align-items: center;
-   gap: 10px;
-   font-size: 13px;
+   justify-content: center;
+   gap: 14px;
+   font-size: 14px;
    color: var(--text-muted);
 }
 
 .phonetic-audio-item span {
-   font-weight: 500;
+   font-weight: 600;
    font-style: italic;
-   min-width: 80px;
+   min-width: 72px;
+   text-align: right;
    color: var(--primary-dark);
 }
 

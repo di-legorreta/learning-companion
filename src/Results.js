@@ -2,6 +2,7 @@ import React from "react";
 import Meaning from "./Meaning";
 import Synonyms from "./Synonyms";
 import Phonetics from "./Phonetics";
+import Language from "./Language";
 
 export default function Results(props) {
    if (props.results && props.results.meanings) {
@@ -24,7 +25,7 @@ export default function Results(props) {
             </article>
             <article className="learning-card card-secondary">
                {props.results.meanings
-                  .slice(0, 4)
+                  .slice(0, 3)
                   .map(function (meaning, index) {
                      return (
                         <div key={index}>
@@ -36,7 +37,9 @@ export default function Results(props) {
             <article className="learning-card card-tertiary">
                <Synonyms synonyms={allSynonyms} />
             </article>
-            <article className="learning-card card-quaternary">Card 4</article>
+            <article className="learning-card card-quaternary">
+               <Language word={props.results.word} />
+            </article>
          </section>
       );
    } else {

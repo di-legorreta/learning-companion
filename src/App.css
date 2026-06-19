@@ -30,141 +30,185 @@ body {
 }
 
 body.dark {
-   /* Moonlit Library — warm charcoal, parchment undertone, single lavender accent */
-   --page-bg: #18181f;
-   --app-bg: linear-gradient(to bottom, #1e1e27 0%, #1c1c25 100%);
-   --header-bg: rgba(28, 28, 38, 0.97);
-   --text-main: #e2ddf2;
-   --text-muted: #9b95b5;
-   --text-soft: #5e5878;
-   --card-bg: #232330;
-   --border-soft: rgba(255, 255, 255, 0.06);
-   --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.35);
-   --primary: #a89dd6;
-   --primary-dark: #c4baf0;
-   --green: #85b898;
-   --orange: #c49468;
-   --blue: #7aabd6;
+   --page-bg: #090909;
+   --app-bg: #090909;
+   --header-bg: rgba(9, 9, 9, 0.95);
+   --text-main: #f5f5f5;
+   --text-muted: #a1a1aa;
+   --text-soft: #52525b;
+   --card-bg: #121212;
+   --border-soft: #262626;
+   --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.8);
+   --primary: #8b88ff;
+   --primary-dark: #8b88ff;
+   --green: #4ade80;
+   --orange: #fb923c;
+   --blue: #60a5fa;
 }
 
-/* Unified card system — all cards share the same surface, no color floods */
+/* ── Unified card surface ── */
 body.dark .card-primary,
 body.dark .card-secondary,
 body.dark .card-tertiary,
 body.dark .card-quaternary {
-   background: var(--card-bg);
-   border-color: rgba(255, 255, 255, 0.07);
-   box-shadow:
-      0 1px 3px rgba(0, 0, 0, 0.25),
-      0 0 0 1px rgba(255, 255, 255, 0.04);
+   background: #121212;
+   border: 1px solid #262626;
+   box-shadow: none;
 }
 
-/* Kill all blob overlays — they read as noise on a unified dark surface */
+body.dark .learning-card {
+   box-shadow: none;
+}
+
+body.dark .learning-card:hover {
+   background: #181818;
+   border-color: #333333;
+   box-shadow: 0 0 0 1px #333333;
+   transform: none;
+}
+
+/* ── Kill all blob decorations ── */
 body.dark .card-primary::before,
 body.dark .card-secondary::before,
 body.dark .card-tertiary::before,
 body.dark .card-quaternary::before {
-   opacity: 0;
+   display: none;
 }
 
-/* Subtle top-edge accent line per card — identity through a thread, not a flood */
-body.dark .card-primary {
-   border-top: 2px solid rgba(168, 157, 214, 0.35);
+/* ── App shell ── */
+body.dark .app {
+   border-radius: 12px;
+   border: 1px solid #1a1a1a;
+   box-shadow: none;
 }
 
-body.dark .card-secondary {
-   border-top: 2px solid rgba(133, 184, 152, 0.35);
+body.dark .app-header {
+   background: rgba(9, 9, 9, 0.95);
+   border-bottom-color: #1f1f1f;
 }
 
-body.dark .card-tertiary {
-   border-top: 2px solid rgba(196, 148, 104, 0.35);
-}
-
-body.dark .card-quaternary {
-   border-top: 2px solid rgba(122, 171, 214, 0.35);
-}
-
-body.dark .learning-card:hover {
-   background: #272736;
-   box-shadow:
-      0 6px 20px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(255, 255, 255, 0.09);
-   transform: translateY(-2px);
-}
-
-/* Labels stay colored — category identity lives here, not in the card background */
-body.dark .part-of-speech {
-   color: var(--green);
-}
-
-body.dark .synonyms-title {
-   color: var(--orange);
-}
-
-body.dark .phonetic {
-   color: var(--primary-dark);
-}
-
-body.dark .meaning-item {
-   border-bottom-color: rgba(255, 255, 255, 0.05);
-}
-
-body.dark .example {
-   color: #817c9a;
-   border-left-color: rgba(133, 184, 152, 0.28);
-}
-
-/* Synonym chips — warm amber, pill-shaped accent on a unified surface */
-body.dark .synonym {
-   background: rgba(196, 148, 104, 0.1);
-   color: #c49468;
-   border-color: rgba(196, 148, 104, 0.22);
-}
-
-body.dark .synonym:hover {
-   background: rgba(196, 148, 104, 0.17);
-   border-color: rgba(196, 148, 104, 0.32);
-   box-shadow: 0 2px 8px rgba(196, 148, 104, 0.1);
-   transform: translateY(-1px);
-}
-
+/* ── Search ── */
 body.dark .search-form {
-   background: #1a1a23;
-   box-shadow:
-      0 8px 24px rgba(0, 0, 0, 0.35),
-      0 0 0 1px rgba(255, 255, 255, 0.06),
-      0 0 24px rgba(168, 160, 255, 0.08);
+   background: #121212;
+   box-shadow: none;
+   border: 1px solid #262626;
 }
 
 body.dark .search-form:focus-within {
-   box-shadow:
-      0 10px 28px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(168, 160, 255, 0.2),
-      0 0 30px rgba(168, 160, 255, 0.18);
+   border-color: #8b88ff;
+   box-shadow: 0 0 0 3px rgba(139, 136, 255, 0.12);
 }
 
+body.dark .search-form button {
+   background: #8b88ff;
+   box-shadow: none;
+}
+
+body.dark .search-form button:hover {
+   background: #9d9aff;
+   box-shadow: none;
+   transform: none;
+}
+
+/* ── Header buttons ── */
 body.dark .header-actions button {
    background: transparent;
-   border-color: rgba(255, 255, 255, 0.08);
-   color: var(--text-muted);
+   border-color: #262626;
+   color: #a1a1aa;
 }
 
 body.dark .header-actions button:hover {
-   background: rgba(168, 157, 214, 0.08);
-   border-color: rgba(168, 157, 214, 0.2);
-   color: var(--primary-dark);
+   background: #181818;
+   border-color: #333333;
+   color: #f5f5f5;
 }
 
+/* ── Typography ── */
+body.dark .word-title {
+   color: #f5f5f5;
+}
+
+body.dark .phonetic {
+   color: #8b88ff;
+   font-style: normal;
+   font-weight: 500;
+}
+
+body.dark .phonetic-audio-item span {
+   color: #8b88ff;
+}
+
+/* ── Part-of-speech badge ── */
+body.dark .part-of-speech {
+   color: #4ade80;
+   background: rgba(74, 222, 128, 0.08);
+   border-color: rgba(74, 222, 128, 0.16);
+}
+
+/* ── Meanings ── */
+body.dark .definition {
+   color: #e4e4e7;
+}
+
+body.dark .meaning-item {
+   border-bottom-color: #1f1f1f;
+}
+
+body.dark .example {
+   color: #71717a;
+   border-left-color: #2a2a2a;
+   font-style: italic;
+}
+
+/* ── Synonyms ── */
+body.dark .synonyms-title {
+   color: #fb923c;
+}
+
+body.dark .synonym {
+   background: rgba(251, 146, 60, 0.08);
+   color: #fb923c;
+   border-color: rgba(251, 146, 60, 0.18);
+}
+
+body.dark .synonym:hover {
+   background: rgba(251, 146, 60, 0.14);
+   border-color: rgba(251, 146, 60, 0.28);
+   box-shadow: none;
+   transform: none;
+}
+
+/* ── Translation / language sections ── */
+body.dark .language-title {
+   color: #60a5fa;
+}
+
+body.dark .language-answer,
+body.dark .language-line-0,
+body.dark .language-line-1 {
+   color: #f5f5f5;
+}
+
+body.dark .language-line-2 {
+   color: #71717a;
+}
+
+body.dark .language-line-3 {
+   color: #52525b;
+}
+
+/* ── Audio ── */
 body.dark .phonetic-audio-item audio {
-   filter: saturate(0.4) brightness(0.7) contrast(0.9);
+   filter: invert(1) brightness(0.55);
+}
+
+/* ── Tip ── */
+body.dark .tip {
+   color: #52525b;
 }
 
 body.dark .tip-icon {
-   opacity: 0.55;
-}
-
-body.dark .word-title {
-   color: #ede8ff;
+   opacity: 0.4;
 }
 
 .app {
@@ -583,8 +627,8 @@ body.dark .word-title {
 }
 
 .meaning-item {
-   margin-bottom: 12px;
-   padding-bottom: 12px;
+   margin-bottom: 18px;
+   padding-bottom: 18px;
    border-bottom: 1px solid rgba(124, 122, 255, 0.08);
 }
 
@@ -595,12 +639,17 @@ body.dark .word-title {
 }
 
 .part-of-speech {
-   margin: 0 0 6px 0;
-   font-size: 13px;
-   font-weight: 600;
-   text-transform: lowercase;
+   display: inline-block;
+   margin: 0 0 12px 0;
+   padding: 4px 10px;
+   border-radius: 999px;
+   font-size: 11px;
+   font-weight: 700;
+   text-transform: uppercase;
+   letter-spacing: 0.8px;
    color: var(--green);
-   letter-spacing: 0.3px;
+   background: rgba(34, 197, 94, 0.12);
+   border: 1px solid rgba(34, 197, 94, 0.15);
 }
 
 .synonyms-title {
@@ -657,12 +706,68 @@ body.dark .word-title {
    box-shadow: 0 2px 6px rgba(249, 115, 22, 0.2);
 }
 
+.language-title {
+   margin: 0 0 12px 0;
+   font-size: 13px;
+   font-weight: 700;
+   text-transform: lowercase;
+   color: var(--blue);
+   letter-spacing: 0.3px;
+}
+
+.language-answer {
+   white-space: pre-line;
+   margin: 0;
+   font-size: 16px;
+   line-height: 1.6;
+   color: var(--text-main);
+}
+
+.language-sections {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+}
+
+.language-section h5 {
+   margin: 0 0 12px;
+   font-size: 16px;
+   font-weight: 600;
+   color: var(--text-main);
+}
+
+.language-line {
+   margin: 0;
+}
+
+.language-line-0 {
+   font-size: 28px;
+   font-weight: 700;
+   color: var(--text-main);
+}
+
+.language-line-1 {
+   font-size: 20px;
+   font-weight: 500;
+   color: var(--text-main);
+}
+
+.language-line-2 {
+   font-size: 14px;
+   color: var(--text-muted);
+   font-style: italic;
+}
+
+.language-line-3 {
+   margin-top: 8px;
+   font-size: 15px;
+   color: var(--text-soft);
+}
+
 @media (max-width: 768px) {
    .cards-grid {
       grid-template-columns: 1fr;
-
       gap: 12px;
-
       padding: 20px 16px 32px;
    }
 

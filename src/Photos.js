@@ -29,7 +29,14 @@ export default function Photos(props) {
       <div className="photos">
          {photos.map(function (photo) {
             return (
-               <img key={photo.id} src={photo.src.landscape} alt={photo.alt} />
+               <a
+                  key={photo.id}
+                  href={photo.url}
+                  target="_blank"
+                  rel="noreferrer"
+               >
+                  <img src={photo.src.landscape} alt={photo.alt} />
+               </a>
             );
          })}
       </div>

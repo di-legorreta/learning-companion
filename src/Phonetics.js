@@ -11,7 +11,12 @@ export default function Phonetics(props) {
 
    useEffect(() => {
       let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${props.word}`;
-      axios.get(apiUrl).then(handleResponse);
+      axios
+         .get(apiUrl)
+         .then(handleResponse)
+         .catch(function () {
+            setPhonetics([]);
+         });
    }, [props.word]);
 
    return (

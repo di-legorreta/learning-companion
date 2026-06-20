@@ -9,9 +9,20 @@ export default function Language(props) {
    }
 
    useEffect(() => {
-      let prompt = `Translate the English word "${props.word}" into German and Spanish. For German, include the article. Provide one short example sentence in each language.`;
+      let prompt = `Translate the English word "${props.word}" into German and Spanish. If the word is a common noun, provide:
+
+- translated word
+- article
+- gender
+- example sentence
+
+If the word is a proper noun (city, country, person, place), provide:
+- translated name only
+- no article unless normally required
+- example sentence.`;
       let context =
-         "Respond on different lines, exactly like this: On the first line, translated word with article. Next line, write the article and gender of the word in german. Next line, Example: short sentence. Next line, translated word with article.  Next line, write the article and gender of the word in Spanish.  Next line, Example: short sentence.";
+         "Respond on different lines, exactly like this: On the first line, translated word in german and article if applicable. Next line, write the article and gender only if applicable. Next line, Example: short sentence. Next line, translated word in spanish with article, article if applicable.  Next line, write the article and gender of the word in Spanish, only if applicable.  Next line, Example: short sentence.";
+
       let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=297bdob5643aebcfc422bc019b792eta`;
       axios.get(apiUrl).then(handleResponse);
    }, [props.word]);

@@ -29,6 +29,10 @@ export default function App() {
                <Dictionary />
             </section>
          </main>
+         <footer className="footer">
+            This project was coded by Diana Legorreta, is open-sourced on{" "}
+            <a href="...">GitHub</a> and hosted on <a href="...">Netlify</a>.
+         </footer>
       </div>
    );
 }

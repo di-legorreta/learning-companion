@@ -29,6 +29,10 @@ body {
    -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+   flex: 1;
+}
+
 body.dark {
    --page-bg: #090909;
    --app-bg: #090909;
@@ -213,6 +217,8 @@ body.dark .tip-icon {
 
 .app {
    min-height: 100vh;
+   display: flex;
+   flex-direction: column;
    margin: 8px;
    background: var(--app-bg);
    border-radius: 16px;

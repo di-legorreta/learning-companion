@@ -1,7 +1,8 @@
 import "./App.css";
-import { BookOpenCheck, Globe, Heart } from "lucide-react";
+import { BookOpenCheck } from "lucide-react";
 import Dictionary from "./Dictionary";
 import ThemeToggle from "./ThemeToggle";
+import LikeHeart from "./LikeHeart";
 
 export default function App() {
    return (
@@ -15,12 +16,8 @@ export default function App() {
             </div>
             <div className="header-actions">
                <ThemeToggle />
-               <button>
-                  <Globe /> DE
-               </button>
-               <button>
-                  <Heart />
-               </button>
+
+               <LikeHeart />
             </div>
          </header>
          <main>
@@ -31,7 +28,22 @@ export default function App() {
          </main>
          <footer className="footer">
             This project was coded by Diana Legorreta, is open-sourced on{" "}
-            <a href="...">GitHub</a> and hosted on <a href="...">Netlify</a>.
+            <a
+               href="https://github.com/di-legorreta/learning-companion"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+               GitHub
+            </a>{" "}
+            and hosted on{" "}
+            <a
+               href="https://learning-companion-cu5.pages.dev/"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+               Cloudflare
+            </a>
+            .
          </footer>
       </div>
    );

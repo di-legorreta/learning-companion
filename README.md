@@ -1,70 +1,222 @@
-# Getting Started with Create React App
+AI Dictionary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An advanced React-based dictionary application designed to help users explore, understand, and learn English vocabulary through definitions, pronunciation, translations, contextual examples, and visual references.
 
-## Available Scripts
+This project began as a traditional dictionary application and was expanded with artificial intelligence, multilingual support, image search capabilities, dark mode, and a responsive user experience.
 
-In the project directory, you can run:
+Overview
 
-### `npm start`
+The AI Dictionary allows users to search for English words and instantly access:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Definitions and meanings
+* Pronunciation and phonetic information
+* Audio pronunciation (when available)
+* Synonyms
+* AI-generated translations
+* Example sentences in multiple languages
+* Related images
+* Light and dark themes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The goal was to create a learning tool that combines traditional dictionary functionality with modern AI-powered language assistance.
 
-### `npm test`
+⸻
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Features
 
-### `npm run build`
+Dictionary Search
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Users can search for English words and receive:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Word definitions
+* Parts of speech
+* Usage examples
+* Pronunciation information
+* Available audio recordings
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Data is retrieved dynamically from DictionaryAPI.
 
-### `npm run eject`
+⸻
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Pronunciation Support
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+When pronunciation audio exists, users can:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* View phonetic spelling
+* Listen to native pronunciation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application gracefully handles words that do not provide phonetic audio, preventing application crashes and ensuring a smooth user experience.
 
-## Learn More
+⸻
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Synonyms
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application displays related synonyms for the searched word, allowing users to expand their vocabulary and discover alternative expressions.
 
-### Code Splitting
+⸻
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+AI-Powered Translations
 
-### Analyzing the Bundle Size
+One of the major enhancements of this project is the integration of the SheCodes AI API.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+For every searched word, the application automatically generates:
 
-### Making a Progressive Web App
+German Translation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* Translation
+* Grammatical article (when applicable)
+* Gender information
+* Example sentence
 
-### Advanced Configuration
+Spanish Translation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* Translation
+* Grammatical article (when applicable)
+* Gender information
+* Example sentence
 
-### Deployment
+Special handling was implemented for proper nouns such as cities, countries, places, and names.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+⸻
 
-### `npm run build` fails to minify
+Image Search
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application integrates the Pexels API to provide visual references related to the searched word.
+
+Features include:
+
+* Dynamic image retrieval
+* Responsive image gallery
+* External links to the original image source
+* Visual context to support language learning
+
+This feature helps users associate vocabulary with real-world imagery.
+
+⸻
+
+Dark Mode
+
+A complete dark mode was implemented to improve usability in low-light environments.
+
+The dark theme includes:
+
+* OLED-inspired color palette
+* Accessible contrast ratios
+* Consistent card styling
+* Contextual color accents
+* Theme persistence during usage
+
+⸻
+
+Responsive Design
+
+The interface was designed to adapt across:
+
+* Desktop screens
+* Tablets
+* Mobile devices
+
+Responsive layouts ensure a consistent experience regardless of screen size.
+
+⸻
+
+Technologies Used
+
+Frontend
+
+* React
+* JavaScript (ES6)
+* CSS3
+* HTML5
+
+Libraries
+
+* Axios
+* Lucide React
+
+APIs
+
+Dictionary API
+
+Used for:
+
+* Definitions
+* Phonetics
+* Pronunciation audio
+* Synonyms
+
+SheCodes AI API
+
+Used for:
+
+* German translations
+* Spanish translations
+* Example sentence generation
+* Grammar information
+
+Pexels API
+
+Used for:
+
+* Related image search
+* Visual vocabulary support
+
+⸻
+
+Technical Challenges
+
+During development, several technical challenges were solved, including:
+
+* Managing multiple asynchronous API requests
+* Coordinating data from three independent APIs
+* Handling missing phonetic and audio data
+* Preventing API failures from breaking the UI
+* Building reusable React components
+* Creating responsive card layouts
+* Designing a consistent dark mode system
+* Structuring AI prompts to generate predictable multilingual responses
+
+⸻
+
+Project Structure
+
+The application is organized into reusable React components, including:
+
+* Dictionary
+* Results
+* Meaning
+* Phonetics
+* Synonyms
+* Language
+* Photos
+* ThemeToggle
+* FavoriteHeart
+
+This component-based architecture improves maintainability and scalability.
+
+⸻
+
+Future Improvements
+
+Potential future enhancements include:
+
+* Additional language support
+* Favorites and saved vocabulary
+* Search history
+* Example sentence audio
+* Language selection interface
+* Vocabulary learning mode
+* Flashcard functionality
+
+⸻
+
+Deployment
+
+The application is deployed using Cloudflare Pages.
+
+⸻
+
+Author
+
+Created by Diana Legorreta.
+
+Built as part of the SheCodes React curriculum and expanded with additional AI, multilingual, image search, and UI functionality beyond the original project requirements.

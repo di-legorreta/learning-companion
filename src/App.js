@@ -41,7 +41,7 @@ export default function App() {
                target="_blank"
                rel="noopener noreferrer"
             >
-               Cloudflare
+               Cloudflare Pages
             </a>
             .
          </footer>
